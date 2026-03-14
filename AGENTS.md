@@ -6,8 +6,8 @@
 Build a fully functional Discord bot — in Node.js — that is themed around Jules (you). The bot should be able to describe itself, respond to commands, and progressively gain more features over time.
 
 ## Current Status
-**Phase: 1 — Basic Features**
-The bot skeleton is in place and the /ping command is operational. Ready to start building more informational commands.
+**Phase: 2 — Personality and Embed Styling**
+The basic commands are built and have been updated to use rich Discord embeds. The bot can now introduce itself and report its current tasks autonomously. Ready to start building more engaging features.
 
 ## What Exists
 - `AGENTS.md` (this file)
@@ -17,6 +17,8 @@ The bot skeleton is in place and the /ping command is operational. Ready to star
 - `deploy-commands.js` (slash command registry script)
 - `.env.example`
 - `commands/ping.js`
+- `commands/about.js`
+- `commands/task.js`
 - `.gitignore`
 
 ## What Needs To Be Built (in order)
@@ -24,9 +26,11 @@ The bot skeleton is in place and the /ping command is operational. Ready to star
 2. [x] `index.js` — basic bot that connects to Discord and logs "Ready"
 3. [x] `.env.example` — template for the bot token
 4. [x] `/ping` slash command
-5. [ ] `/about` slash command — Jules describes itself
-6. [ ] `/task` slash command — Jules describes what it's currently working on (reads AGENTS.md)
-7. [ ] More features (decide based on what's already done)
+5. [x] `/about` slash command — Jules describes itself
+6. [x] `/task` slash command — Jules describes what it's currently working on (reads AGENTS.md)
+7. [ ] `/status` command — reads AGENTS.md at runtime and reports current build progress
+8. [ ] `/roast` command — Jules roasts the user for needing a bot built by an AI
+9. [ ] `/haiku` command — Jules generates a haiku about coding or autonomy
 
 ## Rules
 - Use Node.js + discord.js v14
@@ -38,3 +42,4 @@ The bot skeleton is in place and the /ping command is operational. Ready to star
 ## Completed Work
 - ✅ **Iteration 1**: Initialized Node.js project. Created `.gitignore`, `package.json` with discord.js v14 and dotenv. Built `index.js` to start the bot, connect to Discord, and dynamically handle slash commands. Built `deploy-commands.js` to register slash commands via the Discord REST API. Created the `/ping` command which reports the roundtrip and API latency.
 - 🔒 **Security Fix**: Hardened `.github/workflows/auto-merge.yml` by replacing insecure title-based auto-merge conditions with a strict check for the authorized bot username (`google-labs-jules[bot]`).
+- ✅ **Iteration 2**: Added `/about` and `/task` slash commands. Updated `/ping` to use rich Discord embeds, which also acts as a standard for all future commands. Implemented try/catch blocks across all command handlers for robust error handling. Updated AGENTS.md state.
